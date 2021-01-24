@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    pocketmine-mp:
+        ports:
+            - '19132:19132'
+        volumes:
+            - './data:/data'
+            - './plugins:/plugins'
+        image: pmmp/pocketmine-mp
