@@ -1,9 +1,15 @@
 version: '3.3'
 services:
     pocketmine-mp:
+        build: 
+          context: .
+          args: 
+            - PMMP_TAG=master
         ports:
-            - '19132:19132'
+            - '19132:19132/udp'
         volumes:
             - './data:/data'
             - './plugins:/plugins'
         image: pmmp/pocketmine-mp
+        environment:
+            - POCKETMINE_PLUGINS=BuilderTools:1.2.0-beta1 MultiWorld:1.5.2
